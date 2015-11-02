@@ -4,6 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Principal extends Activity {
 
@@ -11,6 +17,30 @@ public class Principal extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+        //PANTALLA COMPLETA
+        if (savedInstanceState == null) {
+        }
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE);
+
+
+
+        //CONVERTIR ARRAY DE STRING A ARRAYLIST
+        String[] menuprincipal = new String[]{"Perfil", "Juego", "Intrucciones", "Info"};
+        ArrayList<String> lista = new ArrayList<String>(Arrays.asList(menuprincipal));
+
+        //Agregar el ArrayList al Adapter
+
+        MenuAdapter adapter = new MenuAdapter(this, lista);
+        //Agregar el Adapter al ListView
+        final ListView listview = (ListView) findViewById(R.id.listview);
+        listview.setAdapter(adapter);
+        registerForContextMenu(listview);
     }
 
     @Override
