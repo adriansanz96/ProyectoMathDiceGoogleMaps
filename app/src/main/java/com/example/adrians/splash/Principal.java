@@ -1,22 +1,20 @@
 package com.example.adrians.splash;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-public class Principal extends Activity {
-
+public class Principal extends Activity implements ListFragment.ListFragmentListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+
         //PANTALLA COMPLETA
         if (savedInstanceState == null) {
         }
@@ -30,18 +28,40 @@ public class Principal extends Activity {
 
 
 
-        //CONVERTIR ARRAY DE STRING A ARRAYLIST
-        String[] menuprincipal = new String[]{"Perfil", "Juego", "Intrucciones", "Info"};
-        ArrayList<String> lista = new ArrayList<String>(Arrays.asList(menuprincipal));
 
-        //Agregar el ArrayList al Adapter
-
-        MenuAdapter adapter = new MenuAdapter(this, lista);
-        //Agregar el Adapter al ListView
-        final ListView listview = (ListView) findViewById(R.id.listview);
-        listview.setAdapter(adapter);
-        registerForContextMenu(listview);
     }
+
+
+    public void onListSelected(int position,String item) {
+
+
+        //PARA MÓVILES
+        //Intent intent = new Intent(Principal.this, Menu2.class);
+        //startActivity(intent);
+
+        //PARA TABLETS
+
+        if (item == "Perfil") {
+        }
+        if (item == "Juego") {
+            Bundle arguments = new Bundle();//Clase para pasar o recibir datos
+            JuegoFragment fragment = new JuegoFragment();
+            fragment.setArguments(arguments);
+            getFragmentManager().beginTransaction().replace(R.id.framelayout_dinamico, fragment).commit();
+        }
+        if (item == "Intrucciones") {
+        }
+        if (item == "Info") {
+        }
+
+
+            //Hacer desaparecer el TextView
+            TextView textview = (TextView) findViewById(R.id.textView2);
+            textview.setText("");
+
+        }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

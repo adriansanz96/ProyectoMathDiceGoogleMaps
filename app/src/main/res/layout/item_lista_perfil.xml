@@ -11,14 +11,15 @@
         android:layout_height="match_parent"
         android:id="@+id/imageViewperfil"
         android:src="@drawable/ic_face_black_24dp"
-        android:padding="37dp" />
+        android:padding="37dp"
+        android:layout_marginRight="3dp" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Large Text"
         android:id="@+id/textView"
-        android:gravity="center_vertical" />
+        android:gravity="center" />
 
 </LinearLayout>
