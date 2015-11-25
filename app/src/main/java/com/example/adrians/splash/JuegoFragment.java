@@ -389,7 +389,7 @@ public class JuegoFragment extends Fragment{
 
     }
 
-    //Creo una clase para el resultado final, de esta forma
+    //Creo una clase para el resultado final
 public void resultadofinal() {
     String operacion = operador.getText().toString();
     int n1 = Integer.parseInt(num1.getText().toString());

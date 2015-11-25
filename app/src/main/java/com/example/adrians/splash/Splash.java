@@ -37,7 +37,7 @@ public class Splash extends Activity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {
-                    Intent intent = new Intent(Splash.this, Principal.class);
+                    Intent intent = new Intent(Splash.this, PerfilActivity.class);
                     startActivity(intent);
                     finish();//Mata el Activity para que no pueda volver
                 }

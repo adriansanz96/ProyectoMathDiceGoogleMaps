@@ -1,6 +1,8 @@
 package com.example.adrians.splash;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -42,12 +44,16 @@ public class Principal extends Activity implements ListFragment.ListFragmentList
         //PARA TABLETS
 
         if (item == "Perfil") {
+
+            PerfilFragment fragment1 = new PerfilFragment();
+            getFragmentManager().beginTransaction().replace(R.id.framelayout_dinamico, fragment1).commit();
         }
         if (item == "Juego") {
-            Bundle arguments = new Bundle();//Clase para pasar o recibir datos
+
+
             JuegoFragment fragment = new JuegoFragment();
-            fragment.setArguments(arguments);
             getFragmentManager().beginTransaction().replace(R.id.framelayout_dinamico, fragment).commit();
+
         }
         if (item == "Intrucciones") {
         }
