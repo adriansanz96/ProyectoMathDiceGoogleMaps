@@ -28,12 +28,12 @@ public class PerfilActivity extends Activity implements PerfilFragment.PerfilFra
 
 
         Button button = (Button) findViewById(R.id.button);
-
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 Intent intent = new Intent(PerfilActivity.this, Principal.class);
                 startActivity(intent);
+
             }
         });
     }

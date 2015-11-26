@@ -63,7 +63,10 @@ public class ListFragment extends Fragment {
 
     }
 
+
     @Override
+
+    //Comprobar que implementa el Listener para que los Callbacks funcionen
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         // This makes sure that the container activity has implemented

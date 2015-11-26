@@ -28,9 +28,6 @@ public class Principal extends Activity implements ListFragment.ListFragmentList
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE);
 
-
-
-
     }
 
 
@@ -43,7 +40,7 @@ public class Principal extends Activity implements ListFragment.ListFragmentList
 
         //PARA TABLETS
 
-        if (item == "Perfil") {
+        if (item == "Perfil")  {
 
             PerfilFragment fragment1 = new PerfilFragment();
             getFragmentManager().beginTransaction().replace(R.id.framelayout_dinamico, fragment1).commit();
