@@ -1,0 +1,192 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context="com.example.adrians.splash.JuegoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|center_vertical">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="8dp"
+            android:layout_y="5dp"
+            android:id="@+id/linearLayout"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/rojo1"
+                android:layout_x="17dp"
+                android:layout_y="55dp"
+                android:layout_margin="5dp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/rojo2"
+                android:layout_x="135dp"
+                android:layout_y="65dp"
+                android:layout_margin="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignLeft="@+id/resta">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/azul1"
+                android:layout_x="14dp"
+                android:layout_y="155dp"
+                android:layout_below="@+id/linearLayout"
+                android:layout_alignParentStart="true"
+                android:layout_margin="5dp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/azul2"
+                android:layout_x="130dp"
+                android:layout_y="157dp"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_toStartOf="@+id/num1"
+                android:layout_margin="5dp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/azul3"
+                android:layout_x="249dp"
+                android:layout_y="160dp"
+                android:layout_below="@+id/linearLayout"
+                android:layout_toEndOf="@+id/num1"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/dodecaedro"
+            android:layout_x="131dp"
+            android:layout_y="276dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_alignEnd="@+id/linearLayout" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout3"
+            android:layout_below="@+id/dodecaedro"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/resta"
+                android:layout_x="176dp"
+                android:layout_y="391dp"
+                android:layout_below="@+id/linearLayout2"
+                android:layout_toEndOf="@+id/linearLayout3"
+                android:layout_margin="5dp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/suma"
+                android:layout_x="36dp"
+                android:layout_y="391dp"
+                android:layout_alignBottom="@+id/linearLayout3"
+                android:layout_alignEnd="@+id/linearLayout2"
+                android:layout_margin="5dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout4"
+            android:layout_above="@+id/linearLayout2"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:id="@+id/num1"
+                android:layout_x="303dp"
+                android:layout_y="40dp"
+                android:textSize="70dp"
+                android:layout_alignBaseline="@+id/operador"
+                android:layout_alignBottom="@+id/operador"
+                android:layout_toStartOf="@+id/resultado"
+                android:layout_margin="5dp"
+                android:text="0"
+                android:textColor="#d44128" />
+
+            <TextView
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:id="@+id/operador"
+                android:layout_x="423dp"
+                android:layout_y="40dp"
+                android:textSize="70dp"
+                android:layout_alignBaseline="@+id/num2"
+                android:layout_alignBottom="@+id/num2"
+                android:layout_toEndOf="@+id/num2"
+                android:layout_margin="5dp" />
+
+            <TextView
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:id="@+id/num2"
+                android:layout_x="547dp"
+                android:layout_y="40dp"
+                android:textSize="70dp"
+                android:layout_below="@+id/resta"
+                android:layout_toEndOf="@+id/azul3"
+                android:layout_margin="5dp"
+                android:text="0"
+                android:singleLine="false"
+                android:textColor="#414e99" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:id="@+id/resultado"
+            android:layout_x="429dp"
+            android:layout_y="199dp"
+            android:layout_marginEnd="91dp"
+            android:layout_alignBottom="@+id/linearLayout2"
+            android:layout_alignEnd="@+id/linearLayout4"
+            android:textSize="70dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RESULTADO:"
+            android:id="@+id/textView3"
+            android:layout_alignBaseline="@+id/resultado"
+            android:layout_alignBottom="@+id/resultado"
+            android:layout_toStartOf="@+id/resultado"
+            android:textSize="30dp" />
+
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,44 +1,42 @@
 package com.example.adrians.splash;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 /**
  * Created by Adrian S on 11/11/2015.
  */
-public class Menu2 extends Activity {
+public class Menu2 extends Activity implements PerfilFragment.PerfilFragmentListener{
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu2);
-// Check that the activity is using the layout version with
-        // the fragment_container FrameLayout
-        if (findViewById(R.id.framelayout) != null) {
+        // Recogemos los datos del primer activity
+        String extras = getIntent().getExtras().getString("item");
 
-            // However, if we're being restored from a previous state,
-            // then we don't need to do anything and should return or else
-            // we could end up with overlapping fragments.
-            if (savedInstanceState != null) {
-
-            }
-
-            // Create a new Fragment to be placed in the activity layout
-            JuegoFragment firstFragment = new JuegoFragment();
-
-            // In case this activity was started with special instructions from an
-            // Intent, pass the Intent's extras to the fragment as arguments
-            firstFragment.setArguments(getIntent().getExtras());
-
-            // Add the fragment to the 'fragment_container' FrameLayout
-            getFragmentManager().beginTransaction()
-                    .add(R.id.framelayout, firstFragment).commit();
+//PARA MOVILES
+        if (extras.equals("Perfil")) {
+            PerfilFragment fragment1 = new PerfilFragment();
+            getFragmentManager().beginTransaction().replace(R.id.framelayout_menu2, fragment1).commit();
         }
+        if (extras.equals("Juego")) {
+            JuegoFragment fragment = new JuegoFragment();
+            getFragmentManager().beginTransaction().replace(R.id.framelayout_menu2, fragment).commit();
 
+        }
+        if (extras.equals("Intrucciones")) {
+        }
+        if (extras.equals ("Info")) {
+        }
     }
 
+    @Override
+    public void onListSelected(int position) {
 
+    }
 }
-
-
-
-

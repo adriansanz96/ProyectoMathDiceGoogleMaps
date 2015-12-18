@@ -17,14 +17,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Principal"
-            android:label="@string/title_activity_principal"
-            android:screenOrientation="landscape" >
+            android:name=".MainActivity"
+            android:label="@string/title_activity_principal">
         </activity>
         <activity
             android:name=".Menu2"
-            android:label="@string/title_activity_menu2"
-            android:screenOrientation="landscape" >
+            android:label="@string/title_activity_menu2">
         </activity>
         <activity
             android:name=".PerfilActivity"
