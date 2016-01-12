@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,6 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements ListFragment.ListFragmentListener{
+private MediaPlayer reproductor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,14 @@ public class MainActivity extends Activity implements ListFragment.ListFragmentL
             transaction.commit();
         }
 
+        //MUSICA DE FONDO
+        reproductor= MediaPlayer.create(this,R.raw.musicadefondo);
+        reproductor.setLooping(true);
+        reproductor.start();
+
+
+
+
         //PANTALLA COMPLETA
         if (savedInstanceState != null) {
         }
@@ -42,6 +54,13 @@ public class MainActivity extends Activity implements ListFragment.ListFragmentL
 
     }
 
+    protected void onDestroy(){
+        super.onDestroy();
+        if (reproductor.isPlaying()){
+            reproductor.stop();
+            reproductor.release();
+        }
+    }
 
 
     public void onListSelected(int position,String item) {
