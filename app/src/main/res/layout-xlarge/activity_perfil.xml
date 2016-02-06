@@ -9,7 +9,9 @@
 
     <fragment android:name="com.example.adrians.splash.PerfilFragment"
         android:id="@+id/fragment_estatico"
-        android:layout_width="340dp"
+        android:layout_width="500dp"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

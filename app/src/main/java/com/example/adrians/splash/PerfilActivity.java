@@ -2,34 +2,43 @@ package com.example.adrians.splash;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class PerfilActivity extends Activity implements PerfilFragment.PerfilFragmentListener{
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
+
+public class PerfilActivity extends Activity implements PerfilFragment.PerfilFragmentListener
+          {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-
-        if (savedInstanceState == null) {
-        }
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                        | View.SYSTEM_UI_FLAG_FULLSCREEN
-                        | View.SYSTEM_UI_FLAG_IMMERSIVE);
-
-
+//BOTON ENTRAR
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
 
                 Intent intent = new Intent(PerfilActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -62,4 +71,6 @@ public class PerfilActivity extends Activity implements PerfilFragment.PerfilFra
     public void onListSelected(int position){
 
     }
+
+
 }
