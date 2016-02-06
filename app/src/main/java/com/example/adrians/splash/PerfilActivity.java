@@ -1,32 +1,16 @@
 package com.example.adrians.splash;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.location.Location;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
-
-public class PerfilActivity extends Activity implements PerfilFragment.PerfilFragmentListener
-          {
+public class PerfilActivity extends AppCompatActivity implements
+        PerfilFragment.PerfilFragmentListener {
 
 
     @Override
@@ -34,18 +18,22 @@ public class PerfilActivity extends Activity implements PerfilFragment.PerfilFra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
+
+
 //BOTON ENTRAR
-        Button button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button entrar = (Button) findViewById(R.id.buttonentrar);
+        entrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
-
                 Intent intent = new Intent(PerfilActivity.this, MainActivity.class);
                 startActivity(intent);
 
             }
         });
-    }
+
+
+}
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

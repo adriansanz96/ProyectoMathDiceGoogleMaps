@@ -19,7 +19,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -39,18 +38,16 @@ import java.util.Date;
  * create an instance of this fragment.
  */
 public class PerfilFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener{
+        GoogleApiClient.OnConnectionFailedListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    PerfilActivity perfil = (PerfilActivity) getActivity();
 
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
     protected static final String TAG="Localizando";
-
     public EditText localizacion;
 
     //Fichero de guardado
@@ -60,9 +57,7 @@ public class PerfilFragment extends Fragment implements GoogleApiClient.Connecti
     public static final int MEDIA_TYPE_IMAGE = 1;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
 
 
     // TODO: Rename and change types and number of parameters
@@ -76,6 +71,10 @@ public class PerfilFragment extends Fragment implements GoogleApiClient.Connecti
     }
 
     PerfilFragmentListener mListener;
+
+
+
+
     // Container Activity must implement this interface
     public interface PerfilFragmentListener {
         public void onListSelected(int position);//El Activity lo va a tener que definir
@@ -141,7 +140,17 @@ public class PerfilFragment extends Fragment implements GoogleApiClient.Connecti
                 }
         );
 
+//BOTON MAPS
+        Button maps = (Button) v.findViewById(R.id.button6);
+        maps.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
 
+
+                Intent intent = new Intent(getActivity(), MapsActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
     //CAMARA
@@ -175,7 +184,6 @@ public class PerfilFragment extends Fragment implements GoogleApiClient.Connecti
     }
 
 //LOCALIZACION
-
     public void onConnected(Bundle bundle) {
 
         Log.i(TAG,"Conectado con exito");
@@ -214,6 +222,8 @@ public class PerfilFragment extends Fragment implements GoogleApiClient.Connecti
             mGoogleApiClient.disconnect();
         super.onStop();
     }
+
+
 
 //CAMARA
     /** Create a file Uri for saving an image or video */
