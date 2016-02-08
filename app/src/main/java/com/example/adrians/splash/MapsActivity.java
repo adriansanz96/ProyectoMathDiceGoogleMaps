@@ -41,7 +41,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         //LOCALIZACION
-        // Create an instance of GoogleAPIClient.
+        // Create an instance of GoogleAPIClient
         if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)

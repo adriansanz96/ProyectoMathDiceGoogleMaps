@@ -9,7 +9,18 @@
 
     <fragment android:name="com.example.adrians.splash.PerfilFragment"
         android:id="@+id/fragment_estatico"
-        android:layout_width="340dp"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_perfil" />
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        tools:layout="@layout/fragment_perfil"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ENTRAR"
+        android:id="@+id/botonentrar"
+        android:layout_alignEnd="@+id/fragment_estatico"
+        android:layout_below="@+id/fragment_estatico"
+        android:layout_alignStart="@+id/fragment_estatico" />
 </RelativeLayout>

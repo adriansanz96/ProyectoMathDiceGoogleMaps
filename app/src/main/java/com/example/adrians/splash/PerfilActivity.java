@@ -21,7 +21,7 @@ public class PerfilActivity extends AppCompatActivity implements
 
 
 //BOTON ENTRAR
-        Button entrar = (Button) findViewById(R.id.buttonentrar);
+        Button entrar = (Button) findViewById(R.id.botonentrar);
         entrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(PerfilActivity.this, MainActivity.class);
